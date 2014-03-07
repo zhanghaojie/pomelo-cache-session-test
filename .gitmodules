@@ -1,0 +1,3 @@
+[submodule "game-server/node_modules"]
+	path = game-server/node_modules
+	url = https://github.com/zhanghaojie/pomelo.git
