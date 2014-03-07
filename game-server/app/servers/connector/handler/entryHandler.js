@@ -15,6 +15,13 @@ var Handler = function(app) {
  * @return {Void}
  */
 Handler.prototype.entry = function(msg, session, next) {
-  session.bind("admin");
-  next(null, {code: 200, msg: 'game server is ok.'});
+   session.bind("admin");
+   if(msg.bindMore) {
+      session.set("key1", "value1");
+      session.set("key2", "value2");
+      session.set("key3", "value3");
+      session.pushAll();
+   }
+
+   next(null, {code: 200, msg: 'game server is ok.'});
 };
